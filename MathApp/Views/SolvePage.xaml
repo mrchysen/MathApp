@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MathApp.Views.SolvePage"
+             Title="Примеры">
+    
+    <Grid Margin="10"
+          RowDefinitions="3*,2*,1*">
+        <Label Text="{Binding Text}"
+               FontSize="44"
+               HorizontalOptions="Center"
+               Margin="0,50,0,50" />
+        <Entry x:Name="AnswerEntry"
+               Grid.Row="1"
+               FontSize="44"
+               Margin="50,0,50,0"
+               Placeholder="Ответ"
+               FontAutoScalingEnabled="True"/>
+
+        <Grid Grid.Row="2"
+            Grid.ColumnDefinitions="1*,5,1*"
+            Padding="10">
+            <Button Text="Следующий" Clicked="ResetButton_Clicked"/>
+            <Button Grid.Column="2" Text="Принять" Clicked="AcceptButton_Clicked"/>
+        </Grid>
+    </Grid>
+    
+</ContentPage>

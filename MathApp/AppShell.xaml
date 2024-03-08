@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MathApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MathApp.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MathApp">
+
+    <TabBar>
+        <ShellContent
+            Title="Примеры"
+            ContentTemplate="{DataTemplate local:SolvePage}"
+            Icon="{OnPlatform 'game_icon.png'}"/>
+        <ShellContent
+            Title="Статистика"
+            ContentTemplate="{DataTemplate local:StatisticPage}"
+            Icon="{OnPlatform 'stats_icon.png'}"/>
+    </TabBar>
+    
+</Shell>
