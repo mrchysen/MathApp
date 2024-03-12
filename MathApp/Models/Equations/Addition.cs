@@ -14,4 +14,13 @@ public class Addition : Equation
         Summand1 = summand1;
         Summand2 = summand2;
     }
+
+    public Addition(int dif, Func<double,int> difFunc)
+    {
+        Random rnd = new Random();
+
+        Summand1 = (int)rnd.Next(1 + dif, difFunc(dif));
+        Summand1 = (int)rnd.Next(1 + dif, difFunc(dif));
+    }
 }
+
