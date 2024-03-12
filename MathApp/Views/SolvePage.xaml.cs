@@ -18,11 +18,18 @@ public partial class SolvePage : ContentPage
         _Statistic = new(_Path);
 
         Disappearing += SolvePage_Disappearing;
+
+        Appearing += SolvePage_Appearing;
 	}
 
-    private void SolvePage_Disappearing(object? sender, EventArgs e)
+    private async void SolvePage_Appearing(object? sender, EventArgs e)
     {
-        File.WriteAllText(_Path, _Statistic.ToString());
+        _Statistic = new Statistic(_Path);
+    }
+
+    private async void SolvePage_Disappearing(object? sender, EventArgs e)
+    {
+        await File.WriteAllTextAsync(_Path, _Statistic.ToString());
     }
 
     private async void ResetButton_Clicked(object sender, EventArgs e)

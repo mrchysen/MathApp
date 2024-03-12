@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MathApp.Views.StatisticPage"
              Title="Статистика">
+    <!-- Page styles -->
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Label">
@@ -11,6 +12,12 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
+    <!-- Page buttons -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Сброс" Clicked="ResetToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <!-- Page design -->
     <VerticalStackLayout Spacing="10" Margin="5">
         <HorizontalStackLayout Spacing="5">
             <Label Text="Всего решено" />
@@ -29,4 +36,5 @@
             <Label Text="{Binding Percent, StringFormat='{0:P0}'}" />
         </HorizontalStackLayout>
     </VerticalStackLayout>
+    
 </ContentPage>
